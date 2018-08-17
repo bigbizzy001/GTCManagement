@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Exotic Getaways{% endblock%}
+
+
+{% block content %}
+    <div>
+        {% for post in latest_posts %}
+            <h2><a href="{% url 'blog:blog_detail' post.pk %}">{{ post.title }}</a></h2>
+            <p>{{post.body|truncatewords:30 }}</p>
+            <p>Published by <a href="{% url 'gctm:contact_us' %}">{{ post.author }}</a> on {{post.publish}}</p>
+
+            <br>
+        {% endfor %}
+    </div>
+    <div>
+        {% include 'exoticgetaways/pagination.html' with page=latest_posts %}
+    </div>
+{% endblock %}

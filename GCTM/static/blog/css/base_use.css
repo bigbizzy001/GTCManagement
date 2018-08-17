@@ -1,0 +1,19 @@
+ul{
+    color: red
+    font-size: 300%
+}
+
+body{
+    margin: 6px
+
+}
+
+.logo{
+    block: inline
+}
+
+nav .nav-area{
+    margin: 0
+    padding: 10px
+    display: block
+}

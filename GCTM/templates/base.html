@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+	<link rel="stylesheet" type="text/css" href="{% static 'blog/css/bootstrap.min.css' %}">
+
+	<!-- Bootstrap core CSS -->
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="jumbotron.css" rel="stylesheet">
+
+    <title>{% block title %}{% endblock %}</title>
+
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <br>
+        <br>
+      <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'blog:blog_home' %}">Exotic Getaways</a>
+          </li>
+            <!-- my addictions -->
+            <li class="nav-item">
+            <a class="nav-link" href="{% url 'gctm:flights' %}">Flights</a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="{% url 'gctm:hotels' %}">Hotels</a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="{% url 'gctm:visas' %}">Visa</a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="{% url 'gctm:contact_us' %}">Contact Us</a>
+          </li>
+        </ul>
+
+          <!-- <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown01">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form> -->
+      </div>
+    </nav>
+
+    <main role="main">
+
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron" style="background-color: #b0e0e6" >
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <img src="{% static 'blog/images/facebook.jpg' %}" alt="logo"
+                         align="right" width="80px" height="100px" style="padding-top:20px">
+                </div>
+                <div class="col-md-10">
+                    <h1 class="display-3" align="left" style="padding:0px padding-left:0px">Travel Boothe Management</h1>
+                    <p align="center" style="padding-left:0px padding-top:0px"><em>from you to the world...</em></p>
+                </div>
+            </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+            {% block content %}
+            {% endblock %}
+          <!--
+          <div class="col-md-4">
+            <h2>Heading</h2>
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+          </div>
+          <div class="col-md-4">
+            <h2>Heading</h2>
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+          </div>
+          <div class="col-md-4">
+            <h2>Heading</h2>
+            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+            <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+          </div> -->
+        </div>
+
+        <hr>
+
+      </div> <!-- /container -->
+
+    </main>
+
+    <footer class="container">
+        <div class="row">
+          <div class="col-md-6">
+              <p align="center"><strong>© Travel Booth Management 2018</strong></p>
+          </div>
+          <div class="col-md-6">
+              <p align="center">Built by <strong>MarcDevSoft Technologies</strong></p>
+          </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="{% static 'blog/js/bootstrap.min.js' %}"></script>
+
+    </body>
+</html>
+
+<!--<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/bootstrap.css' %}">
+
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="row">
+                <div class="col-md-3">
+                    <a href=""><img src="" alt="logo"></a>
+                </div>
+                <div class="col-md-9">
+                    <a href=""><h1>Travel Boothe Management</h1></a>
+                </div>
+
+
+            </div>
+        </header>
+        <nav>
+            <div class="nav-area">
+                <p align="center">
+                    <a href="/">Home</a>
+                    <a href="{% url 'blog:blog_home' %}">Exotic Getaways</a>
+                    <a href="{% url 'gctm:flights' %}">Flights</a>
+                    <a href="{% url 'gctm:hotels' %}">Hotels</a>
+                    <a href="{% url 'gctm:visas' %}">Visa</a>
+                    <a href="{% url 'gctm:contact_us' %}">Contact Us</a>
+                </p>
+            </div>
+        </nav>
+        <article>
+
+        </article>
+
+
+
+        <footer>
+            <div class="row">
+                <div class="col-md-1">
+                    <p align="center">Socials:<p>
+                </div>
+                <div class="col-md-4">
+                    <a href="" ><img align="center" width="100px" alt="facebook" src="{% static 'blog/images/facebook.jpg' %}" class="img-facebook"></a>
+                </div>
+                <div class="col-md-4">
+                     <a href=""><img align="center" width="100px" alt="twitter" src="" class="img-twitter"></a>
+                </div>
+                <div class="col-md-4">
+                    <a href=""><img align="center" width="100px" alt="instagram" src="{% static 'blog/images/instagram.jpg' %}" class="img-instagram"></a>
+                </div>
+            </div>
+            <div class="copy-right">
+                <br>
+                &copy Travel Boothe Management 2018
+            </div>
+            <div class="built-by">
+                <p>Built by <strong>MarcDevSoft Technologies</strong></p>
+            </div>
+        </footer>
+
+
+    </div>
+</body>
+</html>
+-->

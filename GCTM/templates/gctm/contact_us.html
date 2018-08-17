@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}TBM-Contact Us{% endblock%}
+
+<!--
+Who we are -> some talks to sell yourself...
+Need Assistance? -> this section will introduce the contact form
+-->
+
+{% block content %}
+    <div>
+        <h2>Contact Us</h2>
+        <div>
+            <form action="{% url 'gctm:contact_us' %}" method="post">
+                {% csrf_token %}
+                <p>{{ form.as_p }}</p>
+                <input type=submit value="Submit">
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
